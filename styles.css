@@ -359,6 +359,39 @@ body {
     margin-top: 80px;
 }
 
+/* Mobile-first responsive gallery positioning */
+@media (max-width: 768px) {
+    .photo-gallery {
+        height: 160vh;
+    }
+    
+    .photo-item[style*="top: 15%"] { top: 10% !important; left: 5% !important; }
+    .photo-item[style*="top: 10%"] { top: 5% !important; left: 55% !important; }
+    .photo-item[style*="top: 25%"] { top: 25% !important; left: 75% !important; }
+    .photo-item[style*="top: 40%"] { top: 40% !important; left: 10% !important; }
+    .photo-item[style*="top: 35%"] { top: 35% !important; left: 50% !important; }
+    .photo-item[style*="top: 55%"] { top: 60% !important; left: 5% !important; }
+    .photo-item[style*="top: 58%"] { top: 65% !important; left: 45% !important; }
+    .photo-item[style*="top: 70%"] { top: 85% !important; left: 75% !important; }
+    .photo-item[style*="top: 75%"] { top: 100% !important; left: 20% !important; }
+}
+
+@media (max-width: 480px) {
+    .photo-gallery {
+        height: 200vh;
+    }
+    
+    .photo-item[style*="top: 15%"] { top: 8% !important; left: 2% !important; }
+    .photo-item[style*="top: 10%"] { top: 5% !important; left: 52% !important; }
+    .photo-item[style*="top: 25%"] { top: 28% !important; left: 70% !important; }
+    .photo-item[style*="top: 40%"] { top: 45% !important; left: 5% !important; }
+    .photo-item[style*="top: 35%"] { top: 42% !important; left: 48% !important; }
+    .photo-item[style*="top: 55%"] { top: 65% !important; left: 2% !important; }
+    .photo-item[style*="top: 58%"] { top: 70% !important; left: 40% !important; }
+    .photo-item[style*="top: 70%"] { top: 90% !important; left: 70% !important; }
+    .photo-item[style*="top: 75%"] { top: 110% !important; left: 15% !important; }
+}
+
 .photo-item {
     position: absolute;
     border-radius: 10px;
@@ -382,18 +415,18 @@ body {
 
 /* Photo Sizes */
 .photo-large {
-    width: 300px;
-    height: 200px;
+    width: 350px;
+    height: 230px;
 }
 
 .photo-medium {
-    width: 250px;
-    height: 180px;
+    width: 290px;
+    height: 210px;
 }
 
 .photo-small {
-    width: 200px;
-    height: 150px;
+    width: 240px;
+    height: 180px;
 }
 
 /* Footer */
@@ -449,7 +482,7 @@ body {
         font-size: 0.9rem;
     }
     
-    .about-text, .community-subtitle, .events-text, .sponsors-text {
+    .about-text, .community-subtitle, .events-text, .sponsors-text, .sponsors-list {
         font-size: 1.4rem;
     }
     
@@ -514,7 +547,7 @@ body {
         font-size: 3rem;
     }
     
-    .about-text, .community-subtitle, .events-text, .sponsors-text {
+    .about-text, .community-subtitle, .events-text, .sponsors-text, .sponsors-list {
         font-size: 1.2rem;
     }
     
