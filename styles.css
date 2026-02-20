@@ -517,12 +517,25 @@ body {
     }
     
     .nav-links {
-        gap: 15px;
-        flex-wrap: wrap;
+        gap: 10px;
+        flex-wrap: nowrap;
     }
     
     .nav-link {
         font-size: 0.9rem;
+    }
+    
+    .navbar .apply-btn {
+        padding: 8px 14px;
+        font-size: 0.85rem;
+    }
+    
+    .nav-logo-img {
+        height: 32px;
+    }
+    
+    .navbar {
+        padding: 12px 0;
     }
     
     .about-text, .community-subtitle, .events-text, .sponsors-text, .sponsors-list {
@@ -594,8 +607,21 @@ body {
         font-size: 1.2rem;
     }
     
+    .nav-links {
+        gap: 6px;
+    }
+    
     .nav-link {
-        font-size: 0.8rem;
+        font-size: 0.7rem;
+    }
+    
+    .navbar .apply-btn {
+        padding: 6px 10px;
+        font-size: 0.7rem;
+    }
+    
+    .nav-logo-img {
+        height: 28px;
     }
     
     .section-title {
