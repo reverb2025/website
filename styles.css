@@ -62,39 +62,8 @@ a {
     }
 }
 
-/* Loading */
-.loading-screen {
-    position: fixed;
-    inset: 0;
-    width: 100%;
-    height: 100vh;
-    background: var(--bg);
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    z-index: 9999;
-    transition: opacity 0.8s ease-out;
-}
-
-.loading-logo {
-    opacity: 0;
-    animation: simpleAppear 2s ease-out forwards;
-}
-
-.loading-logo img {
-    height: 120px;
-    width: auto;
-}
-
-@keyframes simpleAppear {
-    0% { opacity: 0; }
-    50% { opacity: 1; }
-    100% { opacity: 0; }
-}
-
+/* Loading / intro */
 .main-content {
-    opacity: 0;
-    transition: opacity 1s ease-in;
     overflow-x: hidden;
     max-width: 100%;
 }
@@ -120,7 +89,7 @@ a {
     transition: color 0.3s ease;
 }
 
-body:not(.is-ready) .corner-nav {
+body:not(.is-ready):not(.page-home) .corner-nav {
     opacity: 0;
     pointer-events: none;
 }
@@ -160,14 +129,22 @@ body:not(.is-ready) .corner-nav {
     stroke-width: 1.75;
     stroke-linecap: round;
     filter: blur(0.4px);
+    stroke-dasharray: 1;
+    stroke-dashoffset: 1;
 }
 
 .wave-a {
     opacity: 0.85;
+    animation: drawWave 1.25s cubic-bezier(0.4, 0, 0.2, 1) forwards;
 }
 
 .wave-b {
     opacity: 0.45;
+    animation: drawWave 1.55s 0.12s cubic-bezier(0.4, 0, 0.2, 1) forwards;
+}
+
+@keyframes drawWave {
+    to { stroke-dashoffset: 0; }
 }
 
 .page-inner {
@@ -232,6 +209,87 @@ body:not(.is-ready) .corner-nav {
     text-transform: none;
 }
 
+/* Home intro: lines draw, then type and nav arrive (~3s) */
+.page-home .wave-a {
+    animation: drawWave 1.65s cubic-bezier(0.45, 0, 0.2, 1) forwards;
+}
+
+.page-home .wave-b {
+    animation: drawWave 2s 0.18s cubic-bezier(0.45, 0, 0.2, 1) forwards;
+}
+
+.page-home .waveform--home {
+    animation: waveFloat 22s 2.5s ease-in-out infinite;
+}
+
+.page-home .corner-nav {
+    pointer-events: none;
+    animation: navLive 0s 2.6s forwards;
+}
+
+@keyframes navLive {
+    to { pointer-events: auto; }
+}
+
+.page-home .hero-word,
+.page-home .hero-subtitle,
+.page-home .footer--home,
+.page-home .corner-nav a {
+    opacity: 0;
+}
+
+.page-home .hero-word {
+    animation: riseIn 0.95s 1.2s cubic-bezier(0.22, 1, 0.36, 1) forwards;
+}
+
+.page-home .hero-subtitle {
+    animation: riseIn 0.85s 1.55s cubic-bezier(0.22, 1, 0.36, 1) forwards;
+}
+
+.page-home .footer--home {
+    animation: fadePop 0.7s 2.2s cubic-bezier(0.22, 1, 0.36, 1) forwards;
+}
+
+.page-home .corner-nav a:nth-child(1) {
+    animation: fadePop 0.65s 1.95s cubic-bezier(0.22, 1, 0.36, 1) forwards;
+}
+.page-home .corner-nav a:nth-child(2) {
+    animation: fadePop 0.65s 2.05s cubic-bezier(0.22, 1, 0.36, 1) forwards;
+}
+.page-home .corner-nav a:nth-child(3) {
+    animation: fadePop 0.65s 2.15s cubic-bezier(0.22, 1, 0.36, 1) forwards;
+}
+.page-home .corner-nav a:nth-child(4) {
+    animation: fadePop 0.65s 2.25s cubic-bezier(0.22, 1, 0.36, 1) forwards;
+}
+
+@keyframes riseIn {
+    from {
+        opacity: 0;
+        transform: translate3d(0, 28px, 0);
+    }
+    to {
+        opacity: 1;
+        transform: none;
+    }
+}
+
+@keyframes fadePop {
+    from {
+        opacity: 0;
+        transform: translate3d(0, 10px, 0);
+    }
+    to {
+        opacity: 1;
+        transform: none;
+    }
+}
+
+@keyframes waveFloat {
+    0%, 100% { transform: translate3d(0, 0, 0); }
+    50% { transform: translate3d(-2.2%, 1.6%, 0); }
+}
+
 .footer {
     padding: 0 0 calc(var(--pad) + 2.5rem);
     text-align: center;
@@ -257,6 +315,7 @@ body:not(.is-ready) .corner-nav {
 
 .home-shell {
     position: relative;
+    z-index: 1;
     min-height: 100vh;
 }
 
@@ -421,7 +480,7 @@ body:not(.is-ready) .corner-nav {
 }
 
 .upcoming-status {
-    margin-top: 1.75rem;
+    margin-top: 4.5rem;
     font-family: var(--font-mono);
     font-size: 0.9rem;
     letter-spacing: 0.2em;
@@ -717,17 +776,35 @@ body:not(.is-ready) .corner-nav {
 }
 
 @media (prefers-reduced-motion: reduce) {
-    .loading-logo,
-    .main-content,
+    .wave,
+    .page-home .wave-a,
+    .page-home .wave-b,
+    .page-home .waveform--home,
+    .page-home .hero-word,
+    .page-home .hero-subtitle,
+    .page-home .footer--home,
+    .page-home .corner-nav,
+    .page-home .corner-nav a,
     .leak img,
-    .leak-preview,
-    .wave {
+    .leak-preview {
         animation: none;
         transition: none;
     }
 
-    .loading-logo {
+    .wave {
+        stroke-dashoffset: 0;
+    }
+
+    .page-home .hero-word,
+    .page-home .hero-subtitle,
+    .page-home .footer--home,
+    .page-home .corner-nav a {
         opacity: 1;
+        transform: none;
+    }
+
+    .page-home .corner-nav {
+        pointer-events: auto;
     }
 
     .waveform,

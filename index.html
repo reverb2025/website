@@ -15,13 +15,7 @@
     <link href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,300;9..144,500&family=IBM+Plex+Mono:wght@400;500&family=Inter+Tight:wght@300;400;500&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="styles.css">
 </head>
-<body>
-    <div id="loading-screen" class="loading-screen">
-        <div id="loading-logo" class="loading-logo">
-            <img src="images/reverb-logo.png" alt="Reverb Logo">
-        </div>
-    </div>
-
+<body class="page-home">
     <nav class="corner-nav" aria-label="Primary">
         <a href="index.html" aria-current="page">Home</a>
         <a href="about.html">About</a>
@@ -29,7 +23,14 @@
         <a href="https://docs.google.com/forms/d/e/1FAIpQLSdUo5JsbliF0uu8CyYp4g7tLcDRworWEYoK6TODnr-UhvcZ9w/viewform?usp=sharing&ouid=114660170328096516589" target="_blank" rel="noopener noreferrer">Apply</a>
     </nav>
 
-    <div id="main-content" class="main-content hidden">
+    <div class="waveform waveform--home" aria-hidden="true">
+        <svg viewBox="0 0 1200 1800" preserveAspectRatio="xMidYMid slice">
+            <path class="wave wave-a" pathLength="1" d="M-80 80 C 180 260, 320 -40, 560 220 C 780 460, 920 80, 1240 300 C 980 560, 240 500, 80 780 C 320 1040, 860 820, 1220 980 C 860 1220, 200 1100, 40 1380 C 360 1620, 880 1480, 1260 1680"/>
+            <path class="wave wave-b" pathLength="1" d="M1280 40 C 980 220, 820 -60, 560 260 C 300 520, 140 120, -80 340 C 220 620, 960 540, 1160 820 C 860 1080, 280 900, -40 1060 C 300 1320, 980 1180, 1240 1460 C 860 1680, 320 1580, -60 1760"/>
+        </svg>
+    </div>
+
+    <div id="main-content" class="main-content show">
         <div class="home-shell">
             <section class="hero hero--void">
                 <h1 class="hero-word">REVERB</h1>

@@ -1,28 +1,7 @@
 document.addEventListener('DOMContentLoaded', function () {
     const reduceMotion = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
-    const loadingScreen = document.getElementById('loading-screen');
-    const mainContent = document.getElementById('main-content');
 
-    const reveal = () => {
-        document.body.classList.add('is-ready');
-        if (mainContent) {
-            mainContent.classList.remove('hidden');
-            mainContent.classList.add('show');
-        }
-    };
-
-    if (loadingScreen && mainContent) {
-        const loadMs = reduceMotion ? 400 : 2500;
-        setTimeout(() => {
-            loadingScreen.style.opacity = '0';
-            setTimeout(() => {
-                loadingScreen.style.display = 'none';
-                reveal();
-            }, reduceMotion ? 0 : 800);
-        }, loadMs);
-    } else {
-        reveal();
-    }
+    document.body.classList.add('is-ready');
 
     initTracklists();
 
@@ -37,13 +16,6 @@ document.addEventListener('DOMContentLoaded', function () {
 
     if (!reduceMotion) {
         initParallax();
-    }
-});
-
-window.addEventListener('beforeunload', function () {
-    const loadingScreen = document.getElementById('loading-screen');
-    if (loadingScreen) {
-        loadingScreen.style.display = 'none';
     }
 });
 
@@ -92,7 +64,7 @@ function initParallax() {
         const y = window.scrollY || window.pageYOffset;
         const vh = window.innerHeight;
 
-        if (waveform) {
+        if (waveform && !waveform.classList.contains('waveform--home')) {
             const quiet = waveform.classList.contains('waveform--quiet');
             const drift = y * (quiet ? 0.08 : 0.14);
             waveform.style.transform = 'translate3d(0, ' + (-drift) + 'px, 0)';
