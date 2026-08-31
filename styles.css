@@ -214,13 +214,6 @@ body:not(.is-ready) .corner-nav {
     padding: 6rem var(--pad);
 }
 
-.hero-logo {
-    height: 72px;
-    width: auto;
-    margin-bottom: 1.75rem;
-    opacity: 0.92;
-}
-
 .hero-word {
     font-family: var(--font-display);
     font-weight: 300;
@@ -321,7 +314,7 @@ body:not(.is-ready) .corner-nav {
 
 .tracklist li {
     display: grid;
-    grid-template-columns: 2.75rem minmax(0, 1fr) auto;
+    grid-template-columns: minmax(0, 1fr) auto;
     gap: 1.25rem;
     align-items: baseline;
     padding: 1.15rem 0;
@@ -332,13 +325,6 @@ body:not(.is-ready) .corner-nav {
 
 .tracklist li:first-child {
     border-top: 1px solid var(--line);
-}
-
-.track-num {
-    font-family: var(--font-mono);
-    font-size: 0.7rem;
-    letter-spacing: 0.08em;
-    color: var(--accent);
 }
 
 .track-name {
@@ -420,10 +406,8 @@ body:not(.is-ready) .corner-nav {
 
 /* Events: now playing */
 .now-playing {
-    min-height: 100vh;
-    display: grid;
-    grid-template-columns: minmax(0, 1fr) minmax(0, 1fr);
-    gap: 4vw;
+    min-height: 80vh;
+    display: flex;
     align-items: center;
     padding: 12vh var(--pad) 8vh;
 }
@@ -434,6 +418,14 @@ body:not(.is-ready) .corner-nav {
 
 .now-playing-copy {
     max-width: 36rem;
+}
+
+.upcoming-status {
+    margin-top: 1.75rem;
+    font-family: var(--font-mono);
+    font-size: 0.9rem;
+    letter-spacing: 0.2em;
+    color: var(--muted);
 }
 
 .flyer-float {
@@ -516,6 +508,19 @@ body:not(.is-ready) .corner-nav {
     filter: brightness(0.65);
     transform: scale(0.92);
     justify-self: start;
+}
+
+.past-flyers {
+    display: flex;
+    flex-direction: column;
+    gap: 3.5rem;
+    justify-self: start;
+}
+
+.flyer-recede--older {
+    max-width: 210px;
+    opacity: 0.32;
+    filter: brightness(0.5);
 }
 
 /* Community light leaks */
@@ -609,10 +614,6 @@ body:not(.is-ready) .corner-nav {
         white-space: nowrap;
     }
 
-    .hero-logo {
-        height: 56px;
-    }
-
     .hero-subtitle {
         font-size: 0.75rem;
         max-width: 16rem;
@@ -642,12 +643,11 @@ body:not(.is-ready) .corner-nav {
     }
 
     .tracklist li {
-        grid-template-columns: 2.2rem 1fr;
-        gap: 0.6rem 1rem;
+        grid-template-columns: 1fr;
+        gap: 0.35rem 1rem;
     }
 
     .track-meta {
-        grid-column: 2;
         text-align: left;
         font-size: 0.65rem;
     }
@@ -702,14 +702,6 @@ body:not(.is-ready) .corner-nav {
 @media (max-width: 480px) {
     .container {
         padding: 0 15px;
-    }
-
-    .hero-logo {
-        height: 48px;
-    }
-
-    .loading-logo img {
-        height: 88px;
     }
 
     .display-title {
