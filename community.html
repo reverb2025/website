@@ -12,129 +12,129 @@
     <title>Events - Reverb</title>
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Oswald:wght@400;500;600;700&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,300;9..144,500&family=IBM+Plex+Mono:wght@400;500&family=Inter+Tight:wght@300;400;500&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="styles.css">
 </head>
 <body>
-    <!-- Navigation -->
-    <nav class="navbar">
-        <div class="nav-container">
-            <div class="nav-logo">
-                <a href="index.html">
-                    <img src="images/reverb-logo-minimal.png" alt="Reverb" class="nav-logo-img">
-                </a>
-            </div>
-            <div class="nav-links">
-                <a href="index.html" class="nav-link">HOME</a>
-                <a href="about.html" class="nav-link">ABOUT US</a>
-                <a href="community.html" class="nav-link active">EVENTS</a>
-                <a href="https://groupme.com/join_group/108949238/XElgiDEF" target="_blank" class="nav-link">GROUPME</a>
-                <a href="https://docs.google.com/forms/d/e/1FAIpQLSfiupsxbkkDlxedf-qEofSASuHO9Cla3smctQWMwtFxwbWB5g/viewform?usp=dialog" target="_blank" class="nav-link apply-btn">APPLY NOW</a>
-            </div>
-        </div>
+    <nav class="corner-nav" aria-label="Primary">
+        <a href="index.html">Home</a>
+        <a href="about.html">About</a>
+        <a href="community.html" aria-current="page">Events</a>
+        <a href="https://docs.google.com/forms/d/e/1FAIpQLSdUo5JsbliF0uu8CyYp4g7tLcDRworWEYoK6TODnr-UhvcZ9w/viewform?usp=sharing&ouid=114660170328096516589" target="_blank" rel="noopener noreferrer">Apply</a>
     </nav>
 
-    <!-- Upcoming Events Section -->
-    <section class="events-section">
-        <div class="container">
-            <h2 class="section-title">UPCOMING EVENTS</h2>
-            <div class="event-flyer">
-                <a href="https://posh.vip/e/black-out-reverb-x-calis" target="_blank" rel="noopener noreferrer">
+    <div class="waveform waveform--quiet" aria-hidden="true">
+        <svg viewBox="0 0 1200 1800" preserveAspectRatio="xMidYMid slice">
+            <path class="wave wave-a" d="M-80 80 C 180 260, 320 -40, 560 220 C 780 460, 920 80, 1240 300 C 980 560, 240 500, 80 780 C 320 1040, 860 820, 1220 980 C 860 1220, 200 1100, 40 1380 C 360 1620, 880 1480, 1260 1680"/>
+            <path class="wave wave-b" d="M1280 40 C 980 220, 820 -60, 560 260 C 300 520, 140 120, -80 340 C 220 620, 960 540, 1160 820 C 860 1080, 280 900, -40 1060 C 300 1320, 980 1180, 1240 1460 C 860 1680, 320 1580, -60 1760"/>
+        </svg>
+    </div>
+
+    <div class="page-inner">
+        <section class="now-playing">
+            <div class="now-playing-copy">
+                <p class="kicker">Now playing</p>
+                <h1 class="display-title" data-lag="0.08">Upcoming</h1>
+            </div>
+            <div class="flyer-float event-flyer">
+                <a class="flyer-link" href="https://posh.vip/e/black-out-reverb-x-calis" target="_blank" rel="noopener noreferrer">
                     <img src="images/calis_blackout_finished.jpg" alt="REVERB x CALIS BLACKOUT">
                 </a>
+                <a href="https://posh.vip/e/black-out-reverb-x-calis" class="text-link" target="_blank" rel="noopener noreferrer">Get tickets</a>
             </div>
-            <div style="text-align: center;">
-                <a href="https://posh.vip/e/black-out-reverb-x-calis" class="tickets-btn" target="_blank" rel="noopener noreferrer">GET TICKETS</a>
-            </div>
-        </div>
-    </section>
+        </section>
 
-    <!-- Past Events Section -->
-    <section class="events-section">
-        <div class="container">
-            <h2 class="section-title">PAST EVENTS</h2>
-            <div class="event-flyer">
+        <section class="past-track" id="past">
+            <div>
+                <p class="section-kicker">Previous track</p>
+                <h2 class="display-title">Past</h2>
+            </div>
+            <div class="flyer-recede event-flyer">
                 <img src="images/reverbpopupfountain.PNG" alt="Past Event">
             </div>
-        </div>
-    </section>
+        </section>
 
-    <!-- Portfolio/Gallery Section -->
-    <section class="portfolio-section">
-        <div class="container">
-            <h2 class="section-title">COMMUNITY</h2>
+        <section class="leaks-section" id="community">
+            <p class="section-kicker">Community</p>
             <p class="community-subtitle">From intimate listening parties to large-scale performances, REVERB hosts events that showcase our community's talent and passion for electronic music. Our showcases provide a platform for emerging artists to share their work and connect with the Berkeley music scene.</p>
-            <div class="photo-gallery">
-                <!-- Photo containers with different sizes and positions -->
-                <div class="photo-item photo-large" style="top: 15%; left: 15%;">
+            <div class="leak-photos">
+                <figure class="leak leak-1" data-speed="0.12">
                     <img src="images/photo1.jpeg" alt="">
-                </div>
-                <div class="photo-item photo-medium" style="top: 10%; left: 52%;">
+                </figure>
+                <figure class="leak leak-2" data-speed="-0.08">
                     <img src="images/photo2.jpeg" alt="">
-                </div>
-                <div class="photo-item photo-small" style="top: 25%; left: 75%;">
+                </figure>
+                <figure class="leak leak-3" data-speed="0.18">
                     <img src="images/photo3.JPG" alt="">
-                </div>
-                <div class="photo-item photo-medium" style="top: 40%; left: 18%;">
+                </figure>
+                <figure class="leak leak-4" data-speed="-0.14">
                     <img src="images/photo4.JPG" alt="">
-                </div>
-                <div class="photo-item photo-large" style="top: 35%; left: 55%;">
+                </figure>
+                <figure class="leak leak-5" data-speed="0.09">
                     <img src="images/photo5.PNG" alt="">
-                </div>
-                <div class="photo-item photo-small" style="top: 55%; left: 12%;">
+                </figure>
+                <figure class="leak leak-6" data-speed="-0.11">
                     <img src="images/photo6.jpeg" alt="">
-                </div>
-                <div class="photo-item photo-medium" style="top: 58%; left: 45%;">
+                </figure>
+                <figure class="leak leak-7" data-speed="0.16">
                     <img src="images/photo7.jpeg" alt="">
-                </div>
-                <div class="photo-item photo-small" style="top: 70%; left: 72%;">
+                </figure>
+                <figure class="leak leak-8" data-speed="-0.07">
                     <img src="images/photo8.JPG" alt="">
-                </div>
-                <div class="photo-item photo-large" style="top: 75%; left: 25%;">
+                </figure>
+                <figure class="leak leak-9" data-speed="0.13">
                     <img src="images/photo9.JPG" alt="">
+                </figure>
+            </div>
+        </section>
+
+        <section class="sponsors-section" id="sponsors">
+            <p class="section-kicker">Past sponsors</p>
+            <p class="sponsors-text">
+                We're grateful for the support of our past sponsors who have helped make our events and workshops possible. Interested in sponsoring REVERB? Reach out to us to learn more about partnership opportunities.
+            </p>
+            <p class="sponsors-list">
+                Sponsors: Red Bull, Caffe Strada, Tap Haus Berkeley, Freehouse Berkeley, Celsius
+            </p>
+            <div class="tracklist-layout">
+                <ul class="tracklist" data-preview="#sponsor-preview">
+                    <li tabindex="0" data-src="images/redbull.svg">
+                        <span class="track-num">01</span>
+                        <span class="track-name">Red Bull</span>
+                        <span class="track-meta">Sponsor</span>
+                    </li>
+                    <li tabindex="0" data-src="images/caffestrada.png">
+                        <span class="track-num">02</span>
+                        <span class="track-name">Caffe Strada</span>
+                        <span class="track-meta">Sponsor</span>
+                    </li>
+                    <li tabindex="0" data-src="images/taphaus.png">
+                        <span class="track-num">03</span>
+                        <span class="track-name">Tap Haus Berkeley</span>
+                        <span class="track-meta">Sponsor</span>
+                    </li>
+                    <li tabindex="0" data-src="images/freehouse.png">
+                        <span class="track-num">04</span>
+                        <span class="track-name">Freehouse Berkeley</span>
+                        <span class="track-meta">Sponsor</span>
+                    </li>
+                    <li tabindex="0" data-src="images/celsius.webp">
+                        <span class="track-num">05</span>
+                        <span class="track-name">Celsius</span>
+                        <span class="track-meta">Sponsor</span>
+                    </li>
+                </ul>
+                <div class="leak-preview" id="sponsor-preview">
+                    <img alt="">
                 </div>
             </div>
-        </div>
-    </section>
+        </section>
 
-    <!-- Sponsors Section -->
-    <section class="sponsors-section">
-        <div class="container">
-            <h2 class="section-title">PAST SPONSORS</h2>
-            <div class="sponsors-content">
-                <p class="sponsors-text">
-                    We're grateful for the support of our past sponsors who have helped make our events and workshops possible. Interested in sponsoring REVERB? Reach out to us to learn more about partnership opportunities.
-                </p>
-                <p class="sponsors-list">
-                    Sponsors: Red Bull, Caffe Strada, Tap Haus Berkeley, Freehouse Berkeley, Celsius
-                </p>
-                <!-- Space for sponsor logos can be added here later -->
-                <div class="sponsors-grid">
-                    <div class="sponsor-logo">
-                        <img src="images/redbull.svg" alt="Red Bull">
-                    </div>
-                    <div class="sponsor-logo">
-                        <img src="images/caffestrada.png" alt="Caffe Strada">
-                    </div>
-                    <div class="sponsor-logo">
-                        <img src="images/taphaus.png" alt="Taphaus" onerror="this.src='images/taphaus2.png';">
-                    </div>
-                    <div class="sponsor-logo">
-                        <img src="images/freehouse.png" alt="Freehouse" onerror="this.src='images/freehouse.avif';">
-                    </div>
-                    <div class="sponsor-logo">
-                        <img src="images/celsius.webp" alt="Celsius">
-                    </div>
-                </div>
-            </div>
-        </div>
-    </section>
-
-    <!-- Footer -->
-    <footer class="footer">
-        <div class="container">
+        <footer class="footer">
             <p>&copy; 2025 REVERB</p>
-        </div>
-    </footer>
+        </footer>
+    </div>
+
+    <script src="script.js"></script>
 </body>
 </html>

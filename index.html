@@ -12,42 +12,34 @@
     <title>Reverb - UC Berkeley Electronic Music</title>
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Oswald:wght@400;500;600;700&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,300;9..144,500&family=IBM+Plex+Mono:wght@400;500&family=Inter+Tight:wght@300;400;500&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="styles.css">
 </head>
 <body>
-    <!-- Loading Screen -->
     <div id="loading-screen" class="loading-screen">
         <div id="loading-logo" class="loading-logo">
             <img src="images/reverb-logo.png" alt="Reverb Logo">
         </div>
     </div>
 
-    <!-- Main Website Content -->
-    <div id="main-content" class="main-content hidden">
-        <!-- Hero Section -->
-        <section class="hero">
-            <div class="hero-content">
-                <img src="images/reverb-logo.png" alt="Reverb" class="hero-logo">
-                <p class="hero-subtitle">UC BERKELEY'S HUB FOR ELECTRONIC MUSIC CULTURE</p>
-                
-                <!-- Homepage Navigation -->
-                <div class="homepage-nav">
-                    <a href="about.html" class="homepage-nav-link">ABOUT US</a>
-                    <a href="community.html" class="homepage-nav-link">EVENTS</a>
-                    <a href="https://groupme.com/join_group/108949238/XElgiDEF" target="_blank" class="homepage-nav-link">GROUPME</a>
-                    <a href="https://www.instagram.com/reverbberkeley/" target="_blank" class="homepage-nav-link">INSTAGRAM</a>
-                    <a href="https://docs.google.com/forms/d/e/1FAIpQLSfiupsxbkkDlxedf-qEofSASuHO9Cla3smctQWMwtFxwbWB5g/viewform?usp=dialog" target="_blank" class="homepage-nav-link apply-btn">APPLY NOW</a>
-                </div>
-            </div>
-        </section>
+    <nav class="corner-nav" aria-label="Primary">
+        <a href="index.html" aria-current="page">Home</a>
+        <a href="about.html">About</a>
+        <a href="community.html">Events</a>
+        <a href="https://docs.google.com/forms/d/e/1FAIpQLSdUo5JsbliF0uu8CyYp4g7tLcDRworWEYoK6TODnr-UhvcZ9w/viewform?usp=sharing&ouid=114660170328096516589" target="_blank" rel="noopener noreferrer">Apply</a>
+    </nav>
 
-        <!-- Footer -->
-        <footer class="footer">
-            <div class="container">
+    <div id="main-content" class="main-content hidden">
+        <div class="home-shell">
+            <section class="hero hero--void">
+                <img src="images/reverb-logo.png" alt="" class="hero-logo">
+                <h1 class="hero-word">REVERB</h1>
+                <p class="hero-subtitle">UC Berkeley's hub for electronic music culture</p>
+            </section>
+            <footer class="footer footer--home">
                 <p>&copy; 2025 REVERB</p>
-            </div>
-        </footer>
+            </footer>
+        </div>
     </div>
 
     <script src="script.js"></script>
